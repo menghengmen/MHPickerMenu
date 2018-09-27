@@ -29,8 +29,7 @@
         _backgroundView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREENWIDTH, 0)] ;
         _backgroundView.backgroundColor = [UIColor lightGrayColor];
         _backgroundView.alpha = 0.2;
-        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapqq)];
-        [_backgroundView addGestureRecognizer:tap];
+       
         _backgroundView.userInteractionEnabled = YES;
     }
     
@@ -50,7 +49,9 @@
 ///
 -(void)setUpUi{
 
- 
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapqq:)];
+    [self.backgroundView addGestureRecognizer:tap];
+    self.backgroundView.userInteractionEnabled = YES;
     [self addSubview:self.backgroundView];
     NSMutableArray *titleArray = [NSMutableArray arrayWithObjects:@"常用",@"类型",@"状态",@"位置",@"时间", nil];
     for (int i =0; i <TITLE_NUMBER; i ++) {
@@ -82,15 +83,17 @@
 -(void)click:(UIButton*)sender{
     [UIView animateWithDuration:1 animations:^{
         self.backgroundView.frame = CGRectMake(0, 0, SCREENWIDTH, SCREENHEIGHT);
+
         self.leftTabelView.frame = CGRectMake(0, BUTTON_HEIGHT, SCREENWIDTH/2, self.frame.size.height -TITLEHEADER);
         self.rightTabelView.frame = CGRectMake(SCREENWIDTH/2, BUTTON_HEIGHT, SCREENWIDTH/2, self.frame.size.height -TITLEHEADER);
-        
+        self.frame = CGRectMake(0, 0, SCREENWIDTH, SCREENHEIGHT);
+
     } completion:^(BOOL finished) {
         
     }];
 }
     
--(void)tapqq{
+-(void)tapqq:(UITapGestureRecognizer*)tap{
     [self animation];
 }
 
@@ -138,7 +141,6 @@
         self.leftTabelView.frame = CGRectMake(0, BUTTON_HEIGHT, SCREENWIDTH/2, 0);
         self.rightTabelView.frame = CGRectMake(SCREENWIDTH/2, BUTTON_HEIGHT, SCREENWIDTH/2, 0);
         self.backgroundView.frame = CGRectMake(0, 0, SCREENWIDTH, 0);
-
     } completion:^(BOOL finished) {
         
     }];
