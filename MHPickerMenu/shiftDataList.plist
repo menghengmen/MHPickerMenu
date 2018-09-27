@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+		<dict>
+        <key>栖霞区</key>
+        <array>
+            <string>丁家庄</string>
+            <string>马群街道</string>
+            <string>东城汇</string>
+            <string>仙林大学城</string>
+        </array>
+        
+        <key>玄武区</key>
+        <array>
+            <string>紫金山</string>
+            <string>火车站/玄武湖</string>
+            <string>珠江路沿线</string>
+            <string>1912商圈</string>
+        </array>
+        
+        <key>秦淮区</key>
+        <array>
+            <string>新街口</string>
+            <string>长白街</string>
+            <string>夫子庙</string>
+            <string>集庆路</string>
+        </array>
+        
+		<key>建邺区</key>
+		<array>
+			<string>虹悦城</string>
+			<string>岱山新村</string>
+			<string>板桥</string>
+			<string>梅山</string>
+		</array>
+ </dict>
+</array>
+</plist>
